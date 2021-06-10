@@ -1,6 +1,5 @@
 import React from 'react'
 import BGParticle from '../../utils/BGParticle'
-import { notification } from 'antd'
 import './style.css'
 import { withRouter } from 'react-router-dom'
 import { inject, observer } from 'mobx-react/index'
@@ -42,7 +41,6 @@ class Login extends React.Component {
 
   componentWillUnmount () {
     this.particle && this.particle.destory()
-    notification.destroy()
   }
   //载入页面时的一些处理
   initPage = () => {
@@ -59,11 +57,6 @@ class Login extends React.Component {
       //为什么写在then里？id为backgroundBox的DOM元素是在loading为false时才有，而上面的setState可能是异步的，必须等到setState执行完成后才去获取dom
       this.particle = new BGParticle('backgroundBox')
       this.particle.init()
-      notification.open({
-        message:<ul><li>初始账号：admin</li><li>初始密码：admin</li></ul>,
-        duration:0,
-        className:'login-notification'
-      })
     })
   }
   //切换showbox
@@ -149,3 +142,4 @@ const styles = {
 }
 
 export default Login
+

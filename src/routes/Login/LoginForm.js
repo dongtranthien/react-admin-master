@@ -109,7 +109,7 @@ class LoginForm extends React.Component {
     const {focusItem, code} = this.state
     return (
       <div className={this.props.className}>
-        <h3 className='title'>管理员登录</h3>
+        <h3 className='title'>Đăng nhập</h3>
         <Form onSubmit={this.loginSubmit}>
           <Form.Item help={getFieldError('username') &&
           <PromptBox info={getFieldError('username')} width={calculateWidth(getFieldError('username'))}/>}>
@@ -120,7 +120,7 @@ class LoginForm extends React.Component {
                 onFocus={() => this.setState({focusItem: 0})}
                 onBlur={() => this.setState({focusItem: -1})}
                 maxLength={16}
-                placeholder='用户名'
+                placeholder='Tên đăng nhập'
                 addonBefore={<span className='iconfont icon-User' style={focusItem === 0 ? styles.focus : {}}/>}/>
             )}
           </Form.Item>
@@ -134,7 +134,7 @@ class LoginForm extends React.Component {
                 onBlur={() => this.setState({focusItem: -1})}
                 type='password'
                 maxLength={16}
-                placeholder='密码'
+                placeholder='Mật khẩu'
                 addonBefore={<span className='iconfont icon-suo1' style={focusItem === 1 ? styles.focus : {}}/>}/>
             )}
           </Form.Item>
@@ -160,7 +160,7 @@ class LoginForm extends React.Component {
                     onFocus={() => this.setState({focusItem: 2})}
                     onBlur={() => this.setState({focusItem: -1})}
                     maxLength={4}
-                    placeholder='验证码'
+                    placeholder='Capcha'
                     addonBefore={<span className='iconfont icon-securityCode-b'
                                        style={focusItem === 2 ? styles.focus : {}}/>}/>
                 </Col>
@@ -171,12 +171,12 @@ class LoginForm extends React.Component {
             )}
           </Form.Item>
           <div className='bottom'>
-            <input className='loginBtn' type="submit" value='登录'/>
-            <span className='registerBtn' onClick={this.register}>注册</span>
+            <input className='loginBtn' type="submit" value='Đăng nhập'/>
+            <span className='registerBtn' onClick={this.register}>Đăng ký</span>
           </div>
         </Form>
         <div className='footer'>
-          <div>欢迎登陆后台管理系统</div>
+          <div></div>
         </div>
       </div>
     )
